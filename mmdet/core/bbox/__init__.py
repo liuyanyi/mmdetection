@@ -2,8 +2,8 @@ from .assigners import (AssignResult, BaseAssigner, CenterRegionAssigner,
                         MaxIoUAssigner, RegionAssigner)
 from .builder import build_assigner, build_bbox_coder, build_sampler
 from .coder import (BaseBBoxCoder, DeltaXYWHBBoxCoder, PseudoBBoxCoder,
-                    TBLRBBoxCoder)
-from .iou_calculators import BboxOverlaps2D, bbox_overlaps
+                    TBLRBBoxCoder, DeltaXYWHABBoxCoder)
+from .iou_calculators import BboxOverlaps2D, bbox_overlaps, RBboxOverlaps2D, rbbox_overlaps
 from .samplers import (BaseSampler, CombinedSampler,
                        InstanceBalancedPosSampler, IoUBalancedNegSampler,
                        OHEMSampler, PseudoSampler, RandomSampler,
@@ -12,6 +12,9 @@ from .transforms import (bbox2distance, bbox2result, bbox2roi,
                          bbox_cxcywh_to_xyxy, bbox_flip, bbox_mapping,
                          bbox_mapping_back, bbox_rescale, bbox_xyxy_to_cxcywh,
                          distance2bbox, roi2bbox)
+from .rtransforms import (rbbox2circumhbbox, rbbox2result,
+                          rbbox_flip, rbbox_mapping_back, rbbox2points)
+
 
 __all__ = [
     'bbox_overlaps', 'BboxOverlaps2D', 'BaseAssigner', 'MaxIoUAssigner',
@@ -23,5 +26,7 @@ __all__ = [
     'build_bbox_coder', 'BaseBBoxCoder', 'PseudoBBoxCoder',
     'DeltaXYWHBBoxCoder', 'TBLRBBoxCoder', 'CenterRegionAssigner',
     'bbox_rescale', 'bbox_cxcywh_to_xyxy', 'bbox_xyxy_to_cxcywh',
-    'RegionAssigner'
+    'RegionAssigner', 'rbbox2circumhbbox', 'rbbox2result', 'rbbox_flip',
+    'rbbox_mapping_back', 'rbbox2points', 'DeltaXYWHABBoxCoder',
+    'RBboxOverlaps2D', 'rbbox_overlaps'
 ]

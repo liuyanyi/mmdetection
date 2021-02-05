@@ -11,6 +11,7 @@ from .utils import get_loading_pipeline, replace_ImageToTensor
 from .voc import VOCDataset
 from .wider_face import WIDERFaceDataset
 from .xml_style import XMLDataset
+from .dotav1 import DOTADatasetV1
 
 __all__ = [
     'CustomDataset', 'XMLDataset', 'CocoDataset', 'DeepFashionDataset',
@@ -18,5 +19,6 @@ __all__ = [
     'LVISV1Dataset', 'GroupSampler', 'DistributedGroupSampler',
     'DistributedSampler', 'build_dataloader', 'ConcatDataset', 'RepeatDataset',
     'ClassBalancedDataset', 'WIDERFaceDataset', 'DATASETS', 'PIPELINES',
-    'build_dataset', 'replace_ImageToTensor', 'get_loading_pipeline'
+    'build_dataset', 'replace_ImageToTensor','get_loading_pipeline',
+    'DOTADatasetV1'
 ]
