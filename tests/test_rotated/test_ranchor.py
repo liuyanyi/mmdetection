@@ -3,7 +3,7 @@ import torch
 import math
 import matplotlib.pyplot as plt
 import matplotlib
-from mmdet.models.dense_heads import RRetinaHead, RRetinaRefineHead
+from mmdet.models.dense_heads import R3Head, R3RefineHead
 from mmdet.core.bbox import rbbox2circumhbbox
 
 matplotlib.use('Qt5Agg')
@@ -42,13 +42,13 @@ train_cfg = mmcv.Config(train_cfg)
 
 num_cls = 2
 
-rh = RRetinaHead(
+rh = R3Head(
     num_classes=num_cls,
     in_channels=256,
     train_cfg=train_cfg
 )
 
-rrh = RRetinaRefineHead(
+rrh = R3RefineHead(
     num_classes=num_cls,
     in_channels=256,
     train_cfg=train_cfg
@@ -175,7 +175,7 @@ for img_id in range(len(img_meta)):
 plt.ioff()
 
 
-rrrh = RRetinaHead(11, 7)
+rrrh = R3Head(11, 7)
 x = torch.rand(1, 7, 32, 32)
 cls_score, bbox_pred = rrrh.forward_single(x)
 # Each anchor predicts a score for each class except background

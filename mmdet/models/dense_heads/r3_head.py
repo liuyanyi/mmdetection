@@ -13,7 +13,7 @@ from ..builder import HEADS
 
 
 @HEADS.register_module()
-class RRetinaHead(AnchorHead):
+class R3Head(AnchorHead):
     """Rotational Anchor-based head
 
     Args:
@@ -62,7 +62,7 @@ class RRetinaHead(AnchorHead):
             angles = anchor_generator["angles"]
             assert angles is None or (torch.tensor(angles).numel() == 1 and torch.all(torch.tensor(angles) == 0))
 
-        super(RRetinaHead, self).__init__(
+        super(R3Head, self).__init__(
             num_classes=num_classes,
             in_channels=in_channels,
             anchor_generator=anchor_generator,

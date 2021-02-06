@@ -27,8 +27,8 @@ from .transformer_head import TransformerHead
 from .vfnet_head import VFNetHead
 from .yolact_head import YOLACTHead, YOLACTProtonet, YOLACTSegmHead
 from .yolo_head import YOLOV3Head
-from .rretina_head import RRetinaHead
-from .rretina_refine_head import RRetinaRefineHead
+from .r3_head import R3Head
+from .r3_refine_head import R3RefineHead
 
 __all__ = [
     'AnchorFreeHead', 'AnchorHead', 'GuidedAnchorHead', 'FeatureAdaption',
@@ -39,5 +39,5 @@ __all__ = [
     'YOLACTSegmHead', 'YOLACTProtonet', 'YOLOV3Head', 'PAAHead',
     'SABLRetinaHead', 'CentripetalHead', 'VFNetHead', 'TransformerHead',
     'StageCascadeRPNHead', 'CascadeRPNHead', 'EmbeddingRPNHead',
-    'RRetinaHead', 'RRetinaRefineHead'
+    'R3Head', 'R3RefineHead'
 ]

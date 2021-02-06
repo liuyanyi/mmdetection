@@ -1,13 +1,13 @@
 import torch
 
-from . import RRetinaHead
+from . import R3Head
 
 from mmcv.runner import force_fp32
 from ..builder import HEADS
 
 
 @HEADS.register_module()
-class RRetinaRefineHead(RRetinaHead):
+class R3RefineHead(R3Head):
     """Rotational Anchor-based refine head
 
     Args:
@@ -44,7 +44,7 @@ class RRetinaRefineHead(RRetinaHead):
                  **kwargs):
 
         self.bboxes_as_anchors = None
-        super(RRetinaRefineHead, self).__init__(
+        super(R3RefineHead, self).__init__(
             num_classes=num_classes,
             in_channels=in_channels,
             stacked_convs=stacked_convs,
@@ -142,7 +142,7 @@ class RRetinaRefineHead(RRetinaHead):
 
         assert rois is not None
         self.bboxes_as_anchors = rois
-        return super(RRetinaRefineHead, self).loss(cls_scores=cls_scores,
+        return super(R3RefineHead, self).loss(cls_scores=cls_scores,
                                                    bbox_preds=bbox_preds,
                                                    gt_bboxes=gt_bboxes,
                                                    gt_labels=gt_labels,

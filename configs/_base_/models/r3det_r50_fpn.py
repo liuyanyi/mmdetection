@@ -19,7 +19,7 @@ model = dict(
         add_extra_convs='on_input',
         num_outs=5),
     bbox_head=dict(
-        type='RRetinaHead',
+        type='R3Head',
         num_classes=15,
         in_channels=256,
         stacked_convs=4,
@@ -57,7 +57,7 @@ model = dict(
     num_refine_stages=2,
     refine_heads=[
         dict(
-            type='RRetinaRefineHead',
+            type='R3RefineHead',
             num_classes=15,
             in_channels=256,
             stacked_convs=4,
@@ -80,7 +80,7 @@ model = dict(
                 beta=0.11,
                 loss_weight=1.0)),
         dict(
-            type='RRetinaRefineHead',
+            type='R3RefineHead',
             num_classes=15,
             in_channels=256,
             stacked_convs=4,
